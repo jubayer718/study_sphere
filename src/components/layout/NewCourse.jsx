@@ -55,7 +55,7 @@ const NewCourse = () => {
             return (
               <Card key={course.id} className={`relative mx-auto w-full p-2 rounded-lg ${course.color}`} >
                 <div className={`absolute inset-0 z-30 aspect-video rounded-lg ${course.color}`} />
-                <div className='w-56'>
+                <div className='w-40'>
                    <img
                   src={course.image}
                   alt="Event cover"
