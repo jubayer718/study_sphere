@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+---
 
-First, run the development server:
+# StudySphere – Smart Study Planner & Analytics Tool
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Idea
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**StudySphere** is a full-stack MERN-based web application designed to help students plan, track, and analyze their study habits effectively.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Unlike a basic task tracker, StudySphere focuses on **study session tracking and performance analytics**, helping users understand how they study and improve productivity over time.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The system allows users to:
 
-## Learn More
+* Manage subjects
+* Log study sessions
+* Track focus levels
+* Analyze productivity trends
+* View personalized dashboards
 
-To learn more about Next.js, take a look at the following resources:
+This project aims to solve a real problem — lack of structured study tracking and performance insight.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Implemented Features
 
-## Deploy on Vercel
+## Authentication System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* User Registration
+* User Login
+* JWT-based authentication
+* Protected routes
+* User-specific data isolation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Subject Management (CRUD)
+
+* Create subjects
+* View subject list
+* Update subject details
+* Delete subjects
+* Set target study hours
+
+---
+
+##  Study Session Management (CRUD)
+
+* Log study sessions
+* Select subject
+* Add study duration
+* Set focus level
+* Add notes
+* Edit & delete sessions
+
+---
+
+## Analytics Dashboard
+
+* Daily and weekly study summary
+* Subject-wise study distribution
+* Total study time calculation
+* Productivity trend visualization (charts)
+
+---
+
+##  Search, Filter & Sort
+
+* Filter sessions by subject
+* Date range filtering
+* Sort by date or duration
+* Efficient query handling
+
+---
+
+## Optimized Data Handling
+
+* Pagination for session list
+* Optimized MongoDB queries
+* Efficient API responses
+
+---
+
+## Reusable Architecture
+
+* Custom React hooks (useAuth, useSessions, useSubjects)
+* Modular component structure
+* Clean MVC backend pattern
+
+---
+
+##  Responsive & Interactive UI
+
+* Fully responsive layout (mobile + desktop)
+* Built using Tailwind CSS + shadcn/ui
+* Loading states & skeletons
+* Success & error messages
+* Smooth transitions & modern design
+
+---
+
+#  Tech Stack
+
+### Frontend
+
+* Next.js (App Router)
+* Tailwind CSS
+* shadcn/ui
+* Axios
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* bcrypt (Password hashing)
+
+### Architecture
+ 
+* RESTful API design
+
+---
+
+
+#  Challenges Faced
+
+* Managing environment variables correctly in Next.js
+* Protecting routes both client-side and server-side
+* Designing efficient MongoDB queries for analytics
+* Handling pagination and filtering simultaneously
+* Structuring clean MVC architecture
+
+---
+
+#  Future Improvements
+
+* Pomodoro timer integration
+* AI-based study recommendations
+* Calendar integration
+* Study streak tracking
+* Email notifications
+* Dark mode toggle
+* Export study report (PDF)
+
+---
+
+# Live Demo
+
+ Live Link: [https://study-sphere-xi.vercel.app/dashboard]
+
+---
+
