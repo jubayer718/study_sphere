@@ -46,7 +46,7 @@ const LoginForm = () => {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-        <Button type="submit">Login</Button>
+        <Button type="submit" className={'cursor-pointer'}>Login</Button>
       </form>
         <p className="font-semibold">if you are not logged in got to <Link className="text text-red-400 underline" href={`/register`}>Register</Link></p>
 
@@ -55,3 +55,5 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+

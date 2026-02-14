@@ -36,11 +36,11 @@ const RegisterPage = () => {
     try {
       const { data } = await axiosPublic.post("/users", userInfo);
       console.log(data);
-      if (data._id) {
+      if (data.data.insertedId) {
         alert("User created successfully!")
       }
 
-      if (!data._id) {
+      if (!data.data.insertedId) {
         alert("User creation failed. Please try again.")
       }
     } catch (error) {
