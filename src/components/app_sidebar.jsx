@@ -18,10 +18,13 @@ import { FaRegChartBar } from "react-icons/fa";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { Button } from "./ui/button";
+import { usePathname } from "next/navigation";
+
 
 export function AppSidebar() {
 
-   
+  const pathname = usePathname();
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -31,22 +34,22 @@ export function AppSidebar() {
       <SidebarContent>
       
         <SidebarGroup className={cn('mt-5')}>
-          <Link className="flex items-center gap-2 hover:bg-cyan-200 hover:text-cyan-800 p-3 " href={'/dashboard'}><span><MdAllInbox /></span>Dashboard</Link>
+          <Link className={`flex items-center gap-2 ${pathname ==='/dashboard' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/dashboard'}><span><MdAllInbox /></span>Dashboard</Link>
         </SidebarGroup>
             <SidebarGroup className={cn('-mt-5')}>
-              <Link className="flex items-center gap-2 hover:bg-cyan-200 hover:text-cyan-800 p-3 " href={'/courses'}> <span><PiHandbagDuotone /></span>Courses</Link>
+              <Link className={`flex items-center gap-2 ${pathname ==='/courses' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/courses'}> <span><PiHandbagDuotone /></span>Courses</Link>
         </SidebarGroup>
         <SidebarGroup className={cn('-mt-5')}>
-          <Link className="flex items-center gap-2 hover:bg-cyan-200 hover:text-cyan-800 p-3 " href={'/chats'}><span><IoIosChatboxes /></span>Chats</Link>
+          <Link className={`flex items-center gap-2 ${pathname ==='/chats' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/chats'}><span><IoIosChatboxes /></span>Chats</Link>
         </SidebarGroup>
         <SidebarGroup className={cn('-mt-5')}>
-          <Link className="flex items-center gap-2 hover:bg-cyan-200 hover:text-cyan-800 p-3 " href={'/grade'}><span><FaRegChartBar /></span>Grade</Link>
+          <Link className={`flex items-center gap-2 ${pathname ==='/grade' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/grade'}><span><FaRegChartBar /></span>Grade</Link>
         </SidebarGroup>
         <SidebarGroup className={cn('-mt-5')} >
-          <Link className="flex items-center gap-2 hover:bg-cyan-200 hover:text-cyan-800 p-3 " href={'/schedule'}><span><AiOutlineSchedule /></span>Schedule</Link>
+          <Link className={`flex items-center gap-2 ${pathname ==='/schedule' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/schedule'}><span><AiOutlineSchedule /></span>Schedule</Link>
         </SidebarGroup>
         <SidebarGroup className={cn('-mt-5')}>
-          <Link className="flex items-center gap-2 hover:bg-cyan-200 hover:text-cyan-800 p-3 " href={'/settings'}><span><FiSettings /></span>Settings</Link>
+          <Link className={`flex items-center gap-2 ${pathname ==='/settings' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/settings'}><span><FiSettings /></span>Settings</Link>
         </SidebarGroup>
        
       </SidebarContent>

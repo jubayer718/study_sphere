@@ -4,6 +4,7 @@ import NewCourse from '@/components/layout/NewCourse';
 import React from 'react';
 
 const Dashboard = () => {
+  
   return (
     <div className=' flex flex-col md:flex-row justify-between gap-8 my-8'>
       <div>

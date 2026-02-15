@@ -4,7 +4,7 @@ import Credentials from "next-auth/providers/credentials";
 // import Google from 'next-auth/providers/google';
 // import Twitter from "next-auth/providers/twitter";
 
-export const { handlers, signIn, signOut, getSession } = NextAuth({
+export const { handlers, signIn, signOut, getSession, auth } = NextAuth({
   providers: [
     // Google,
     // Twitter,

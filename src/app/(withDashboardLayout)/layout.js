@@ -7,7 +7,8 @@ const Layout  = ({children}) => {
        <SidebarProvider>
           <AppSidebar />
           <main> 
-              <SidebarTrigger />
+          <SidebarTrigger />
+          
              {children}
            </main>
       </SidebarProvider>

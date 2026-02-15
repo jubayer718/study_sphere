@@ -1,5 +1,6 @@
 'use client';
 import useAxiosPublic from '@/app/hooks/useAxiosPublic';
+import Navbar from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -18,9 +19,10 @@ const Courses = () => {
   }, [axiosPublic]);
 
   return (
-    <div>
+    <div className='ml-5'>
+      <Navbar/>
       <h1 className="text-2xl font-bold">All Courses</h1>
-      <div className="grid grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5  gap-4 mt-4">
         {courses.map(course => (
            <Card key={course._id} className={`relative mx-auto w-full p-2 rounded-lg ${course.color}`} >
                 <div className={`absolute inset-0 z-30 aspect-video rounded-lg ${course.color}`} />
