@@ -1,73 +1,28 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-
-import { Button } from "@/components/ui/button";
-import { MdArrowForwardIos } from "react-icons/md";
-import {
-  Card,
-  CardAction,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
 import useAxiosPublic from '@/app/hooks/useAxiosPublic';
-import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+import React, { useEffect, useState } from 'react';
+import { MdArrowForwardIos } from 'react-icons/md';
 
-
-// const courses = [
-//   {
-//     id: 1,
-//     title: "Geography Course",
-//     description: "A practical talk on component APIs, accessibility, and shipping faster.",
-//     image: "/img/geography_img.jpg",
-//     category: "Geography",
-//     color: "bg-blue-500"
-//   },
-//   {
-//     id: 2,
-//     title: "Javascript Course",
-//     description: "This course will cover the basics of JavaScript, including variables, data types, functions, and control flow.",
-//     image: "/img/javascript.png",
-//     category: "Programming",
-//     color: "bg-yellow-500"
-//   },
-//   {
-//     id: 3,
-//     title: "Design systems meetup",
-//     description: "A practical talk on component APIs, accessibility, and shipping faster.",
-//     image: "/img/design.jpg",
-//     category: "Design",
-//     color: "bg-green-500"
-
-//   }
-// ]
-
-const NewCourse = () => {
+const Courses = () => {
   const [courses, setCourses] = useState([]);
-  console.log(courses);
   const axiosPublic = useAxiosPublic();
-
-  useEffect(() => {
+  useEffect(() => { 
     const getCourses = async () => {
       const { data } = await axiosPublic.get('/courses');
-      console.log(data)
       setCourses(data.data);
     }
     getCourses();
   }, [axiosPublic]);
 
   return (
-    <div className='lg:ml-3 mt-3'>
-      <h2 className='text-xl font-bold'>New Course</h2>
-      {/* card section */}
-      <div className='grid grid-cols-3 gap-3 mt-5 '>
-        {
-          courses.slice(0, 3).map(course => {
-            return (
-              <Card key={course._id} className={`relative mx-auto w-full p-2 rounded-lg ${course.color}`} >
+    <div>
+      <h1 className="text-2xl font-bold">All Courses</h1>
+      <div className="grid grid-cols-3 gap-4 mt-4">
+        {courses.map(course => (
+           <Card key={course._id} className={`relative mx-auto w-full p-2 rounded-lg ${course.color}`} >
                 <div className={`absolute inset-0 z-30 aspect-video rounded-lg ${course.color}`} />
                 <div className='w-40'>
                    <img
@@ -95,19 +50,10 @@ const NewCourse = () => {
                 </div>
                 </CardFooter>
               </Card>
-            )
-
-
-
-
-          })
-        }
-
-
+        ))}
       </div>
-      <div className='mt-4 flex items-center justify-end'><Button className={cn('bg-cyan-200 text-black hover:bg-cyan-300')}><Link href="/courses">View All Courses</Link></Button></div>
     </div>
   );
 };
 
-export default NewCourse;
+export default Courses;
