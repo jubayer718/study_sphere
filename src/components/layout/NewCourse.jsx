@@ -15,6 +15,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import useAxiosPublic from '@/app/hooks/useAxiosPublic';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 
 // const courses = [
@@ -46,18 +47,21 @@ import Link from 'next/link';
 // ]
 
 const NewCourse = () => {
-  const [courses, setCourses] = useState([]);
-  console.log(courses);
   const axiosPublic = useAxiosPublic();
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search") || "";
+  const [courses, setCourses] = useState([]);
+  
+    useEffect(() => {
+    const fetchCourses = async () => {
+      const res = await axiosPublic.get(`/courses`,{params:{search}});
+      setCourses(res.data.data);
+    };
 
-  useEffect(() => {
-    const getCourses = async () => {
-      const { data } = await axiosPublic.get('/courses');
-      console.log(data)
-      setCourses(data.data);
-    }
-    getCourses();
-  }, [axiosPublic]);
+    fetchCourses();
+  }, [search, axiosPublic]);
+
+
 
   return (
     <div className='lg:ml-3 mt-3'>

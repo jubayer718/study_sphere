@@ -14,7 +14,7 @@ import { signOut } from "next-auth/react";
 import { MdAllInbox } from "react-icons/md";
 import { PiHandbagDuotone } from "react-icons/pi";
 import { IoIosChatboxes } from "react-icons/io";
-import { FaRegChartBar } from "react-icons/fa";
+import { FaHome, FaRegChartBar } from "react-icons/fa";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { Button } from "./ui/button";
@@ -51,8 +51,13 @@ export function AppSidebar() {
         <SidebarGroup className={cn('-mt-5')}>
           <Link className={`flex items-center gap-2 ${pathname ==='/settings' ? 'bg-cyan-200 text-cyan-800' : 'hover:bg-cyan-200 hover:text-cyan-800'} p-3 `} href={'/settings'}><span><FiSettings /></span>Settings</Link>
         </SidebarGroup>
+
+        <SidebarGroup className={cn('-mt-5')}>
+          <Link className={`flex items-center gap-2  hover:bg-cyan-200 p-3 `} href={'/'}><span><FaHome /></span>Main Home</Link>
+        </SidebarGroup>
        
       </SidebarContent>
+    
 
       <SidebarFooter>
         <Button
@@ -62,6 +67,7 @@ export function AppSidebar() {
         Logout
        </Button>
       </SidebarFooter>
+
       
     </Sidebar>
   )

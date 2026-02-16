@@ -4,19 +4,22 @@ import Navbar from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/button';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { MdArrowForwardIos } from 'react-icons/md';
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const axiosPublic = useAxiosPublic();
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search") || "";
   useEffect(() => { 
     const getCourses = async () => {
-      const { data } = await axiosPublic.get('/courses');
+      const { data } = await axiosPublic.get('/courses',{params:{search}});
       setCourses(data.data);
     }
     getCourses();
-  }, [axiosPublic]);
+  }, [search, axiosPublic]);
 
   return (
     <div className='ml-5'>
