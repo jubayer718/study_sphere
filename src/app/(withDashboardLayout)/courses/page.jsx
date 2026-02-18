@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = 'force-dynamic';
 import useAxiosPublic from '@/app/hooks/useAxiosPublic';
 import Navbar from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/button';
