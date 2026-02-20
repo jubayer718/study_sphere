@@ -14,8 +14,8 @@ const CoursesClient = () => {
 
   const [courses, setCourses] = useState([]);
   const axiosPublic = useAxiosPublic();
-  // const searchParams = useSearchParams();
-  // const search = searchParams.get("search") || "";
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search") || "";
   useEffect(() => { 
     const getCourses = async () => {
       const { data } = await axiosPublic.get('/courses',{params:{search}});
@@ -28,9 +28,8 @@ const CoursesClient = () => {
   
   return (
     <div className='ml-5'>
-      <Navbar />
+ 
         
-      <h1 className="text-2xl font-bold">All Courses</h1>
       <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5  gap-4 mt-4">
         {courses.map(course => (
            <Card key={course._id} className={`relative mx-auto w-full p-2 rounded-lg ${course.color}`} >
