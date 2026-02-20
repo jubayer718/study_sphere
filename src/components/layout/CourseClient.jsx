@@ -14,8 +14,8 @@ const CoursesClient = () => {
 
   const [courses, setCourses] = useState([]);
   const axiosPublic = useAxiosPublic();
-  const searchParams = useSearchParams();
-  const search = searchParams.get("search") || "";
+  // const searchParams = useSearchParams();
+  // const search = searchParams.get("search") || "";
   useEffect(() => { 
     const getCourses = async () => {
       const { data } = await axiosPublic.get('/courses',{params:{search}});

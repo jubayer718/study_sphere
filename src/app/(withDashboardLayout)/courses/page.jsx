@@ -1,4 +1,3 @@
-// app/(withDashboardLayout)/courses/page.tsx
 import { Suspense } from 'react';
 import CoursesClient from '@/components/layout/CourseClient';
 
