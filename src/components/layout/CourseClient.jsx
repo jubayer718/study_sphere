@@ -1,5 +1,5 @@
 'use client';
-
+export const dynamic = 'force-dynamic';
 import React, { useEffect, useState } from 'react';
 import useAxiosPublic from '@/app/hooks/useAxiosPublic';
 import Navbar from './Navbar';
