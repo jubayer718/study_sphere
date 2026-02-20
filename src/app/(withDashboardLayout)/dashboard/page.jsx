@@ -1,4 +1,5 @@
 import { CalendarWithPresets } from '@/components/Calender';
+import Navbar from '@/components/layout/Navbar';
 
 import NewCourse from '@/components/layout/NewCourse';
 import React, { Suspense } from 'react';
@@ -9,6 +10,7 @@ const Dashboard = () => {
     <div className=' flex flex-col md:flex-row justify-between gap-8 my-8'>
     <Suspense fallback={<div>Loading...</div>}>
       <div>
+      <Navbar/>
       <NewCourse/>
         </div>
         </Suspense>
