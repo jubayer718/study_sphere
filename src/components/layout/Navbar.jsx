@@ -1,4 +1,7 @@
 'use client';
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 import React, { useState } from 'react';
 import { Input } from '../ui/input';
 import { IoSearchOutline } from 'react-icons/io5';
